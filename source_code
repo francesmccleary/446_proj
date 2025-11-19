@@ -133,7 +133,8 @@ class SimpleQueue:
 
     def report(self):
         """Report generator function.
-
+        ""
+        print 
         print("Average delay in queue: {:.3f} minutes".format(self.total_of_delays / self.num_custs_delayed))
         print("Average number in queue: {:.3f}".format(self.area_num_in_q / self.sim_time))
         print("Server utilization: {:.3f}".format(self.area_server_status / self.sim_time))
