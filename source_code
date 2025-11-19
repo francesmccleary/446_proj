@@ -1,6 +1,6 @@
-#copied from assigmment 1 
+"""Do not touch this code. Put your modified code in the next cell"""
 import numpy as np
-np.random.seed(3)
+np.random.seed(7)
 
 class SimpleQueue:
     """Define a class called SimpleQueue"""
@@ -32,7 +32,6 @@ class SimpleQueue:
         self.time_next_event = [0, 0, 0]   # The list self.time_next_event has 3 entries, with index 0 not used.
         self.time_next_event[1] = self.sim_time + self.expon(self.mean_interarrival)
         self.time_next_event[2] = float('inf')
-        self.next_event_type = 0 
 
         # Initialize other variables.
         self.num_events = 2
@@ -40,13 +39,6 @@ class SimpleQueue:
     def main(self):
         """Main function."""
 
-        # Write report heading and input parameters.
-        print("-" * 40)
-        print("Single-server queueing system")
-        print("Mean interarrival time: {:.3f} minutes".format(self.mean_interarrival))
-        print("Mean service time: {:.3f} minutes".format(self.mean_service))
-        print("Number of customers: {}".format(self.num_delays_required))
-        print("-" * 40)
 
         # Run the simulation while more delays are needed.
         while self.num_custs_delayed < self.num_delays_required:
@@ -140,14 +132,14 @@ class SimpleQueue:
             del self.time_arrival[0]
 
     def report(self):
-        """Report generator function."""
+        """Report generator function.
 
         print("Average delay in queue: {:.3f} minutes".format(self.total_of_delays / self.num_custs_delayed))
         print("Average number in queue: {:.3f}".format(self.area_num_in_q / self.sim_time))
         print("Server utilization: {:.3f}".format(self.area_server_status / self.sim_time))
         print("Time simulation ended: {:.3f} minutes".format(self.sim_time))
         print("-" * 40)
-
+        """ 
     def update_time_avg_stats(self):
         """Function to compute time-average statistics."""
 
@@ -171,3 +163,4 @@ m = SimpleQueue(100000)
 
 # Call main function to start the simulation.
 m.main()
+
